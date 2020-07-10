@@ -1,0 +1,34 @@
+When I saw the NES controller -> 8-directional game
+Out of control -> directions switch ever so often
+
+There was this space mining game, after enough upgrade to speed the spaceship didn't have powerful breaking
+and would oversteer
+
+Combining the two, a scroller air game where you can't break fast enough.
+Collecting certain pickups cause directions to switch.
+
+Addictions!!!
+You are the president of a teenager mind. You have to organise their subconsience
+so that they don't get addicted. Not sure what gameplay would look like. But the lore is fun
+Could make relatable too, like not falling hard for crush who doesn't like you back.
+
+Multiplying
+A game where destroying an enemy generates 2. Soon enough everything will be overwhelmed.
+Alternatively, not destroying them leads to them multiplying on their own after a set time
+
+Swapping controls:
+I realised that if notes on the keyboard were switched, I'd have tough time typing.
+Perhaps that could be turned into a mechanic. Or a piano, if the keys were switched.
+This needs to be implemented carefully since it needs to be fun, not frustating.
+Ties back to the first idea I had
+
+I keep thinking of the scroller idea. There aren't any enemies. Just collectibles,
+and the occasional obsticles. Hitting the walls, kills you.
+4 controls - left, right, fire and boost(forward, uncontrollable)
+Shooting enemies splits them into 2, but they split at 45deg angles keeping you in a safe path.
+Enemies bounce and ricochet off walls. Collectibles swap controls
+
+I really love the addications idea. I think its a novel intepretation. just can't figure out a gameplay mechanic
+I don't want it to be boring. Personally, I don't like management games much - they're basically idle clicker imos
+
+A platformer, or rougelike - where tiles pop in and out of existence randomly
