@@ -8,7 +8,7 @@ extends "res://thoughts/actions.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print($LifetimeTimer.get_wait_time())
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
