@@ -5,7 +5,7 @@ extends RigidBody2D
 # var b = "text"
 export(int) var speed = 110
 
-var ThoughtNode = load("res://thoughts/Thought.tscn")
+var ThoughtNode = load("res://thoughts/thought.tscn")
 
 func rand_vector():
 	return Vector2(rand_range(-1, 1), rand_range(-1, 1)).normalized()
@@ -30,6 +30,7 @@ func _ready():
 	var wait_time = rand_range(5, 20)
 	$LifetimeTimer.set_wait_time(wait_time)
 	$LifetimeTimer.start()
+	$MovementTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,7 +48,9 @@ func _input_event(_viewport, event, _shape_idx):
 
 func _change_velocity():
 	var screen = get_viewport_rect()
-	$MovementTimer.set_wait_time(1.0)
+	
+	if $MovementTimer.get_wait_time() != 1.0:
+		$MovementTimer.set_wait_time(1.0)
 	
 	if screen.has_point(position):
 		set_linear_velocity(rand_vector() * speed)
