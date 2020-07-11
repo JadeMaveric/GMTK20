@@ -14,7 +14,7 @@ func _ready():
 		ProjectSettings.get_setting("display/window/size/height")
 	)
 
-	for i in range(initial_thought_count):
+	for _i in range(initial_thought_count):
 		var stable_thought = StableThoughtNode.instance()
 		stable_thought.position = Vector2(randi() % int(screen.x), randi() % int(screen.y))
 		stable_thought.get_node("MovementTimer").set_wait_time(randf())
@@ -25,8 +25,8 @@ func _ready():
 		unstable_thought.get_node("MovementTimer").set_wait_time(randf())
 		add_child(unstable_thought)
 
-func _unhandled_input(event):
-	pass
+#func _unhandled_input(event):
+#	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

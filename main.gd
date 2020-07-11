@@ -22,7 +22,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var count = thought_count()
 	var goodies :float = float(count["goodies"])
 	var baddies :float = float(count["baddies"])
