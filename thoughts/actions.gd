@@ -38,6 +38,8 @@ func _input_event(viewport, event, shape_idx):
 
 func _change_velocity():
 	var screen = get_viewport_rect()
+	$Timer.set_wait_time(1.0)
+	
 	if screen.has_point(position):
 		set_linear_velocity(rand_vector() * speed)
 	else:
