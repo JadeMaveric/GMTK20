@@ -9,16 +9,18 @@ export(int) var speed = 110
 var ThoughtNode = load("res://thoughts/Thought.tscn")
 
 func rand_vector():
-	return [Vector2.DOWN, Vector2.UP, Vector2.LEFT, Vector2.RIGHT][floor(rand_range(0, 4))]
-	
+	return Vector2(rand_range(-1, 1), rand_range(-1, 1)).normalized()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
 	
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("gp_kill"):
@@ -28,24 +30,17 @@ func _input_event(viewport, event, shape_idx):
 		# Slide left, generate child on right
 		var clone = ThoughtNode.instance()
 		var clone_dir = rand_vector()
-		clone.set_linear_velocity((clone_dir-position).normalized() * 110)
+		clone.set_linear_velocity((clone_dir-position).normalized() * speed)
 		clone.position = position + clone_dir
 		position = position - clone_dir
 		get_parent().add_child(clone)
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_down"):
-		set_linear_velocity(Vector2.DOWN * 110)
-	elif event.is_action_pressed("ui_right"):
-		set_linear_velocity(Vector2.RIGHT * 110)
-	elif event.is_action_pressed("ui_up"):
-		set_linear_velocity(Vector2.UP * 110)
-	elif event.is_action_pressed("ui_left"):
-		set_linear_velocity(Vector2.LEFT * 110)
-	if event.is_action_pressed("ui_accept"):
-		set_linear_velocity(Vector2.ZERO)
-
 
 func _change_velocity():
-	set_linear_velocity(rand_vector() * 110)
-	print("Time to bounce")
+	var screen = get_viewport_rect()
+	if screen.has_point(position):
+		set_linear_velocity(rand_vector() * speed)
+	else:
+		var center : Vector2 = screen.position + screen.size/2
+		var movement_dir := position.direction_to(center)
+		set_linear_velocity(movement_dir * speed)

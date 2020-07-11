@@ -9,5 +9,5 @@
 script = ExtResource( 2 )
 
 [node name="Thought" parent="ThoughtController" instance=ExtResource( 1 )]
-position = Vector2( 353.496, 206.885 )
+position = Vector2( 553.811, 288.303 )
 applied_force = Vector2( 0, 0 )
