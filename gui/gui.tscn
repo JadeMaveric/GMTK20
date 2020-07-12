@@ -9,6 +9,7 @@
 [node name="GUI" type="MarginContainer"]
 anchor_right = 1.0
 margin_bottom = 41.0
+mouse_filter = 2
 mouse_default_cursor_shape = 2
 script = ExtResource( 5 )
 __meta__ = {
@@ -20,31 +21,85 @@ __meta__ = {
 [node name="Bar" type="HBoxContainer" parent="."]
 margin_right = 1280.0
 margin_bottom = 97.0
+mouse_filter = 2
 custom_constants/separation = 0
 
 [node name="LifeStats" type="VBoxContainer" parent="Bar"]
-margin_right = 928.0
+margin_right = 500.0
 margin_bottom = 97.0
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="LifeBar" parent="Bar/LifeStats" instance=ExtResource( 6 )]
-margin_right = 928.0
+mouse_filter = 2
 
 [node name="EnergyBar" parent="Bar/LifeStats" instance=ExtResource( 7 )]
 margin_top = 57.0
-margin_right = 928.0
+margin_right = 500.0
 margin_bottom = 97.0
+mouse_filter = 0
+
+[node name="Empty" type="VBoxContainer" parent="Bar"]
+margin_left = 500.0
+margin_right = 642.0
+margin_bottom = 97.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Empty2" type="VBoxContainer" parent="Bar"]
+margin_left = 642.0
+margin_right = 784.0
+margin_bottom = 97.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bar/Empty2"]
+margin_right = 142.0
+margin_bottom = 34.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pause" type="Button" parent="Bar/Empty2"]
+pause_mode = 2
+margin_top = 38.0
+margin_right = 142.0
+margin_bottom = 58.0
+button_mask = 7
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Bar/Empty2"]
+margin_top = 62.0
+margin_right = 142.0
+margin_bottom = 97.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty3" type="VBoxContainer" parent="Bar"]
+margin_left = 784.0
+margin_right = 926.0
+margin_bottom = 97.0
+mouse_filter = 2
+size_flags_horizontal = 3
 
 [node name="MoodStats" type="VBoxContainer" parent="Bar"]
-margin_left = 928.0
-margin_right = 1280.0
+margin_left = 926.0
+margin_right = 1278.0
 margin_bottom = 97.0
+mouse_filter = 2
 alignment = 1
 
 [node name="BoredomBar" parent="Bar/MoodStats" instance=ExtResource( 2 )]
 margin_top = 6.0
 margin_bottom = 46.0
+mouse_filter = 2
 
 [node name="AddictionBar" parent="Bar/MoodStats" instance=ExtResource( 1 )]
 margin_top = 50.0
 margin_bottom = 90.0
+mouse_filter = 2
+[connection signal="pressed" from="Bar/Empty2/Pause" to="." method="_on_Pause_pressed"]

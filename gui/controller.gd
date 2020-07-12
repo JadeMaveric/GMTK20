@@ -7,7 +7,8 @@ onready var life_text = $Bar/LifeStats/LifeBar/Count/Background/Number
 onready var life_bar = $Bar/LifeStats/LifeBar/TextureProgress
 onready var addiction_bar = $Bar/MoodStats/AddictionBar/TextureProgress
 onready var boredom_bar = $Bar/MoodStats/BoredomBar/TextureProgress
-onready var tween := $Tween
+onready var tween :Tween= $Tween
+onready var pause_btn :Button= $Bar/Empty2/Pause
 
 var goodies_ratio := 0.5
 var baddies_ratio := 0.5
@@ -31,3 +32,15 @@ func _process(_delta):
 	boredom_bar.set_as_ratio(baddies_ratio)
 
 
+
+
+func _on_Pause_pressed():
+	var is_paused = pause_btn.text == "Pause"
+	
+	if is_paused:
+		pause_btn.text = "Unpause"
+		get_tree().paused = true
+	else:
+		pause_btn.text = "Pause"
+		get_tree().paused = false
+	
