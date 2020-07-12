@@ -1,8 +1,18 @@
 extends Node
 
 
-export(int) var health = 100
-export(int) var energy = 10
+export(float) var health = 100
+export(float) var energy = 10
+
+func use_energy():
+	if energy > 0:
+		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy-1, 0.5)
+		energy -= 1
+
+func refill_energy():
+	if energy < 10:
+		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy+1, 0.5)
+		energy += 1
 
 
 func thought_count():
@@ -19,7 +29,7 @@ func thought_count():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$GUI.tween.follow_property(self, "energy", $GUI.animated_energy, $GUI, "animated_energy", 0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,15 +40,26 @@ func _process(delta):
 	if goodies == 0 or baddies == 0:
 		health = 0
 	
-	var good_score = 0; var bad_score = 0
+	var good_score := 0.0; var bad_score := 0.0
 	if goodies != 0 or baddies != 0:
 		good_score = goodies / (goodies + baddies)
 		bad_score = baddies / (goodies + baddies)
 	
+	if goodies > baddies+2:
+		health -= 10 * delta
+	elif baddies > goodies+2:
+		health -= 10 * delta
+	elif goodies == baddies:
+		health += 5 * delta
+		
+	if health > 100:
+		health = 100
+	elif health < 0:
+		health = 0
+	
 	$GUI.tween.interpolate_property($GUI, "goodies_ratio", null, good_score, 0.5)
 	$GUI.tween.interpolate_property($GUI, "baddies_ratio", null, bad_score, 0.5)
 	$GUI.tween.interpolate_property($GUI, "animated_health", null, health, 0.5)
-	$GUI.tween.interpolate_property($GUI, "animated_energy", null, energy, 0.5)
 	
 	if not $GUI.tween.is_active():
 		$GUI.tween.start()

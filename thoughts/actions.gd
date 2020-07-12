@@ -40,11 +40,11 @@ func _ready():
 	
 func _input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("gp_kill"):
-		get_parent().get_parent().energy += 1
+		get_node("/root/Main").refill_energy()
 		kill()
 		
 	elif event.is_action_pressed("gp_save"):
-		get_parent().get_parent().energy -= 1
+		get_node("/root/Main").use_energy()
 		save()
 
 
@@ -62,10 +62,6 @@ func _change_velocity():
 
 func _on_LifetimeTimer_timeout():
 	pass # Replace with function body.
-
-
-func _on_collide(body):
-	$AnimationPlayer.play("bounce")
 
 
 func _on_BounceTimer_timeout():
