@@ -14,10 +14,23 @@ var baddies_ratio := 0.5
 var animated_health := 100.0
 var animated_energy := 10.0
 
+var boredom_warning := false
+var addiction_warning := false
+var overthink_warning := false
+var energy_warning := false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$AnimationPlayer.get_animation("GameOverBob").set_loop(true)
+	$AnimationPlayer.get_animation("BoredomDanger").set_loop(true)
+	$AnimationPlayer.get_animation("AddictionDanger").set_loop(true)
+	$AnimationPlayer2.get_animation("GameOverBob").set_loop(true)
+	$AnimationPlayer2.get_animation("BoredomDanger").set_loop(true)
+	$AnimationPlayer2.get_animation("AddictionDanger").set_loop(true)
+	$AnimationPlayer3.get_animation("GameOverBob").set_loop(true)
+	$AnimationPlayer3.get_animation("BoredomDanger").set_loop(true)
+	$AnimationPlayer3.get_animation("AddictionDanger").set_loop(true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,9 +45,24 @@ func _process(_delta):
 	
 	if animated_health < 1:
 		$GameOver.show()
-		$AnimationPlayer.get_animation("GameOverBob").set_loop(true)
 		$AnimationPlayer.play("GameOverBob")
 		get_tree().paused = true
+	
+	if boredom_warning:
+		$AnimationPlayer.play("BoredomDanger")
+	else:
+		$AnimationPlayer.stop()
+	
+	if addiction_warning:
+		$AnimationPlayer2.play("AddictionDanger")
+	else:
+		$AnimationPlayer.stop()
+	
+	if energy_warning:
+		$AnimationPlayer3.play("EnergyDanger")
+	else:
+		$AnimationPlayer.stop()
+	
 
 
 func _on_HP_mouse_entered():

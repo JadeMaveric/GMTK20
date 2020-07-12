@@ -47,23 +47,30 @@ func _process(delta):
 		bad_score = baddies / (goodies + baddies)
 	
 	# Calculate Health
-	if goodies > baddies+2:
+	if goodies > baddies+1:
 		health -= 10 * delta
-	elif baddies > goodies+2:
+		$GUI.boredom_warning = true
+	elif baddies > goodies+1:
 		health -= 10 * delta
+		$GUI.addiction_warning = true
 	elif goodies == baddies:
 		health += 5 * delta
 	elif goodies+baddies > 10:
 		health -= 10 *delta # Overthinking looses health
-		
+		$GUI.overthink_warning = true
+	else:
+		$GUI.boredom_warning = false
+		$GUI.addiction_warning = false
+		$GUI.overthink_warning = false
+	
 	if health > 100:
 		health = 100
 	elif health < 0:
 		health = 0
 		
-		
+	$GUI.energy_warning = energy < 1
 	# Refill some energy
-	refill_energy(0.05 * delta)
+	refill_energy(0.1 * delta)
 	
 	$GUI.tween.interpolate_property($GUI, "goodies_ratio", null, good_score, 0.5)
 	$GUI.tween.interpolate_property($GUI, "baddies_ratio", null, bad_score, 0.5)
