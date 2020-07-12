@@ -69,4 +69,4 @@ func _on_collide(body):
 func _on_BounceTimer_timeout():
 	$BounceTimer.set_wait_time(1.0)
 	$AnimationPlayer.play("bounce")
-	$MovementTimer.start()
+	$MovementTimer.start(.3)
