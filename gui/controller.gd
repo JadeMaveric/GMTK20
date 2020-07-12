@@ -8,12 +8,12 @@ onready var life_bar = $Bar/LifeStats/LifeBar/TextureProgress
 onready var addiction_bar = $Bar/MoodStats/AddictionBar/TextureProgress
 onready var boredom_bar = $Bar/MoodStats/BoredomBar/TextureProgress
 onready var tween :Tween= $Tween
-onready var pause_btn :Button= $Bar/Empty2/Pause
 
 var goodies_ratio := 0.5
 var baddies_ratio := 0.5
 var animated_health := 100.0
 var animated_energy := 10.0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +22,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	energy_text.text = str(round(animated_energy))
 	energy_bar.value = animated_energy
 	
 	life_text.text = str(round(animated_health))
@@ -30,17 +29,30 @@ func _process(_delta):
 	
 	addiction_bar.set_as_ratio(goodies_ratio)
 	boredom_bar.set_as_ratio(baddies_ratio)
-
-
-
-
-func _on_Pause_pressed():
-	var is_paused = pause_btn.text == "Pause"
 	
-	if is_paused:
-		pause_btn.text = "Unpause"
-		get_tree().paused = true
-	else:
-		pause_btn.text = "Pause"
-		get_tree().paused = false
-	
+	if animated_health < 1:
+		$GameOver.show()
+
+
+func _on_HP_mouse_entered():
+	$Messages/HP.show()
+
+
+func _on_HP_mouse_exited():
+	$Messages/HP.hide()
+
+
+func _on_WP_mouse_entered():
+	$Messages/WP.show()
+
+
+func _on_WP_mouse_exited():
+	$Messages/WP.hide()
+
+
+func _on_BA_mouse_entered():
+	$Messages/BA.show()
+
+
+func _on_BA_mouse_exited():
+	$Messages/BA.hide()

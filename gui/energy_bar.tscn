@@ -16,9 +16,11 @@ font_data = SubResource( 1 )
 [node name="EnergyBar" instance=ExtResource( 1 )]
 margin_right = 352.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Count" parent="." index="0"]
 margin_bottom = 40.0
+mouse_filter = 2
 custom_constants/margin_left = 20
 
 [node name="Background" parent="Count" index="0"]
@@ -28,6 +30,7 @@ margin_bottom = 40.0
 [node name="Title" parent="Count/Background" index="0"]
 margin_top = -20.0
 margin_bottom = 20.0
+mouse_filter = 2
 texture = ExtResource( 2 )
 
 [node name="Number" parent="Count/Background" index="1"]
@@ -38,6 +41,7 @@ custom_fonts/font = SubResource( 2 )
 [node name="TextureProgress" parent="." index="1"]
 margin_right = 352.0
 margin_bottom = 40.0
+mouse_filter = 2
 max_value = 10.0
 step = 0.1
 value = 10.0
