@@ -15,6 +15,7 @@ margin_bottom = 81.0
 
 [node name="ThoughtController" type="Node" parent="."]
 script = ExtResource( 2 )
+initial_thought_count = 2
 
 [node name="Walls" type="StaticBody2D" parent="."]
 

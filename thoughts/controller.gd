@@ -17,12 +17,12 @@ func _ready():
 	for _i in range(initial_thought_count):
 		var stable_thought = StableThoughtNode.instance()
 		stable_thought.position = Vector2(randi() % int(screen.x), randi() % int(screen.y))
-		stable_thought.get_node("MovementTimer").set_wait_time(randf())
+		stable_thought.get_node("BounceTimer").set_wait_time(randf())
 		add_child(stable_thought)
 		
 		var unstable_thought = UnstableThoughtNode.instance()
 		unstable_thought.position = Vector2(randi() % int(screen.x), randi() % int(screen.y))
-		unstable_thought.get_node("MovementTimer").set_wait_time(randf())
+		unstable_thought.get_node("BounceTimer").set_wait_time(randf())
 		add_child(unstable_thought)
 
 #func _unhandled_input(event):

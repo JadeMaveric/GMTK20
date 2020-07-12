@@ -30,7 +30,7 @@ func _ready():
 	var wait_time = rand_range(5, 20)
 	$LifetimeTimer.set_wait_time(wait_time)
 	$LifetimeTimer.start()
-	$MovementTimer.start()
+	$BounceTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,10 +47,8 @@ func _input_event(_viewport, event, _shape_idx):
 
 
 func _change_velocity():
+	$MovementTimer.stop()
 	var screen = get_viewport_rect()
-	
-	if $MovementTimer.get_wait_time() != 1.0:
-		$MovementTimer.set_wait_time(1.0)
 	
 	if screen.has_point(position):
 		set_linear_velocity(rand_vector() * speed)
@@ -62,3 +60,13 @@ func _change_velocity():
 
 func _on_LifetimeTimer_timeout():
 	pass # Replace with function body.
+
+
+func _on_collide(body):
+	$AnimationPlayer.play("bounce")
+
+
+func _on_BounceTimer_timeout():
+	$BounceTimer.set_wait_time(1.0)
+	$AnimationPlayer.play("bounce")
+	$MovementTimer.start()
