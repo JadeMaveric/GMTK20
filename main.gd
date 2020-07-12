@@ -4,6 +4,8 @@ extends Node
 export(float) var health = 100
 export(float) var energy = 10
 
+var game_score = 0
+
 func use_energy(value):
 	if energy > 0:
 		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy-value, 0.5)
@@ -70,7 +72,7 @@ func _process(delta):
 		
 	$GUI.energy_warning = energy < 1
 	# Refill some energy
-	refill_energy(0.1 * delta)
+	refill_energy(0.5 * delta)
 	
 	$GUI.tween.interpolate_property($GUI, "goodies_ratio", null, good_score, 0.5)
 	$GUI.tween.interpolate_property($GUI, "baddies_ratio", null, bad_score, 0.5)
@@ -78,3 +80,7 @@ func _process(delta):
 	
 	if not $GUI.tween.is_active():
 		$GUI.tween.start()
+		
+	# Game Score
+	game_score += (10 - goodies - baddies) * delta * int(health!=0)
+	$GUI/Bar/Count2/Background/Score.text = str(round(game_score))
