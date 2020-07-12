@@ -8,6 +8,8 @@ var UnstableThoughtNode = load("res://thoughts/unstable/thought.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# RNG
+	randomize()
 	# Populate with thought nodes
 	var screen := Vector2(
 		ProjectSettings.get_setting("display/window/size/width"),

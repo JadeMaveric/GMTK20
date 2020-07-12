@@ -4,15 +4,15 @@ extends Node
 export(float) var health = 100
 export(float) var energy = 10
 
-func use_energy():
+func use_energy(value):
 	if energy > 0:
-		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy-1, 0.5)
-		energy -= 1
+		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy-value, 0.5)
+		energy -= value
 
-func refill_energy():
+func refill_energy(value):
 	if energy < 10:
-		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy+1, 0.5)
-		energy += 1
+		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy+value, 0.5)
+		energy += value
 
 
 func thought_count():
@@ -37,6 +37,7 @@ func _process(delta):
 	var goodies :float = float(count["goodies"])
 	var baddies :float = float(count["baddies"])
 	
+	# Game Over: Fell to addication or boredom
 	if goodies == 0 or baddies == 0:
 		health = 0
 	
@@ -45,17 +46,24 @@ func _process(delta):
 		good_score = goodies / (goodies + baddies)
 		bad_score = baddies / (goodies + baddies)
 	
+	# Calculate Health
 	if goodies > baddies+2:
 		health -= 10 * delta
 	elif baddies > goodies+2:
 		health -= 10 * delta
 	elif goodies == baddies:
 		health += 5 * delta
+	elif goodies+baddies > 10:
+		health -= 10 *delta # Overthinking looses health
 		
 	if health > 100:
 		health = 100
 	elif health < 0:
 		health = 0
+		
+		
+	# Refill some energy
+	refill_energy(0.05 * delta)
 	
 	$GUI.tween.interpolate_property($GUI, "goodies_ratio", null, good_score, 0.5)
 	$GUI.tween.interpolate_property($GUI, "baddies_ratio", null, bad_score, 0.5)

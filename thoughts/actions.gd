@@ -27,7 +27,7 @@ func save():
 func _ready():
 	set_mode(RigidBody2D.MODE_CHARACTER)
 	set_bounce(1)
-	var wait_time = rand_range(5, 20)
+	var wait_time = rand_range(5, 15)
 	$LifetimeTimer.set_wait_time(wait_time)
 	$LifetimeTimer.start()
 	$BounceTimer.start()
@@ -39,13 +39,23 @@ func _ready():
 
 	
 func _input_event(_viewport, event, _shape_idx):
-	if event.is_action_pressed("gp_kill"):
-		get_node("/root/Main").refill_energy()
-		kill()
+	if not event.is_pressed():
+		return
 		
-	elif event.is_action_pressed("gp_save"):
-		get_node("/root/Main").use_energy()
-		save()
+	var will_power = get_node("/root/Main").energy
+	if will_power < 1:
+		if randf() > 0.5:
+			kill()
+		else:
+			save()
+	else:
+		if event.is_action_pressed("gp_kill"):
+			get_node("/root/Main").use_energy(1)
+			kill()
+			
+		elif event.is_action_pressed("gp_save"):
+			get_node("/root/Main").use_energy(1)
+			save()
 
 
 func _change_velocity():
@@ -61,7 +71,10 @@ func _change_velocity():
 
 
 func _on_LifetimeTimer_timeout():
-	pass # Replace with function body.
+	if randf() < 0.5:
+		save()
+	else:
+		kill()
 
 
 func _on_BounceTimer_timeout():
