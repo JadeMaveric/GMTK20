@@ -33,8 +33,5 @@ func _process(_delta):
 	var good_score = goodies / (goodies + baddies)
 	var bad_score = baddies / (goodies + baddies)
 	
-	$GUI/Bar/Goodies.set_as_ratio(good_score)
-	$GUI/Bar/Baddies.set_as_ratio(bad_score)
-	
-	$GUI/Bar/GoodiesCount.text = str(goodies)
-	$GUI/Bar/BaddiesCount.text = str(baddies)
+	$GUI.goodies_ratio = good_score
+	$GUI.baddies_ratio = bad_score

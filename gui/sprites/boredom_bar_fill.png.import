@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar_green.png-3f6976aec41285657aee7c19619b71d8.stex"
+path="res://.import/boredom_bar_fill.png-387549b097b1f8ff8047db8c1b86c074.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/bar_green.png"
-dest_files=[ "res://.import/bar_green.png-3f6976aec41285657aee7c19619b71d8.stex" ]
+source_file="res://gui/sprites/boredom_bar_fill.png"
+dest_files=[ "res://.import/boredom_bar_fill.png-387549b097b1f8ff8047db8c1b86c074.stex" ]
 
 [params]
 

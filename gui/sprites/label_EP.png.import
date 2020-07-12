@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar_green_bg.png-5a70a12171623f448e96e7cfe30b655a.stex"
+path="res://.import/label_EP.png-e2c7bef233cd9d2d4d1c5a1fe7b6b25b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/bar_green_bg.png"
-dest_files=[ "res://.import/bar_green_bg.png-5a70a12171623f448e96e7cfe30b655a.stex" ]
+source_file="res://gui/sprites/label_EP.png"
+dest_files=[ "res://.import/label_EP.png-e2c7bef233cd9d2d4d1c5a1fe7b6b25b.stex" ]
 
 [params]
 

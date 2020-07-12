@@ -1,16 +1,13 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gui/bar_red.png" type="Texture" id=1]
-[ext_resource path="res://gui/bar_red_bg.png" type="Texture" id=2]
-[ext_resource path="res://gui/bar_green_bg.png" type="Texture" id=3]
-[ext_resource path="res://gui/bar_green.png" type="Texture" id=4]
+[ext_resource path="res://gui/addiction_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gui/boredom_bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/controller.gd" type="Script" id=5]
+[ext_resource path="res://gui/life_bar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/energy_bar.tscn" type="PackedScene" id=7]
 
 [node name="GUI" type="MarginContainer"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -128.0
-margin_right = 88.0
+anchor_right = 1.0
 margin_bottom = 41.0
 mouse_default_cursor_shape = 2
 script = ExtResource( 5 )
@@ -21,36 +18,33 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Bar" type="HBoxContainer" parent="."]
-margin_right = 216.0
-margin_bottom = 41.0
+margin_right = 1280.0
+margin_bottom = 97.0
 custom_constants/separation = 0
 
-[node name="BaddiesCount" type="Label" parent="Bar"]
-visible = false
-margin_top = 13.0
-margin_right = 8.0
-margin_bottom = 27.0
-text = "0"
+[node name="LifeStats" type="VBoxContainer" parent="Bar"]
+margin_right = 928.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
 
-[node name="Baddies" type="TextureProgress" parent="Bar"]
-margin_right = 100.0
-margin_bottom = 41.0
-value = 9.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 1 )
-fill_mode = 1
+[node name="LifeBar" parent="Bar/LifeStats" instance=ExtResource( 6 )]
+margin_right = 928.0
 
-[node name="Goodies" type="TextureProgress" parent="Bar"]
-margin_left = 100.0
-margin_right = 200.0
-margin_bottom = 41.0
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 4 )
+[node name="EnergyBar" parent="Bar/LifeStats" instance=ExtResource( 7 )]
+margin_top = 57.0
+margin_right = 928.0
+margin_bottom = 97.0
 
-[node name="GoodiesCount" type="Label" parent="Bar"]
-visible = false
-margin_left = 200.0
-margin_top = 13.0
-margin_right = 208.0
-margin_bottom = 27.0
-text = "0"
+[node name="MoodStats" type="VBoxContainer" parent="Bar"]
+margin_left = 928.0
+margin_right = 1280.0
+margin_bottom = 97.0
+alignment = 1
+
+[node name="BoredomBar" parent="Bar/MoodStats" instance=ExtResource( 2 )]
+margin_top = 6.0
+margin_bottom = 46.0
+
+[node name="AddictionBar" parent="Bar/MoodStats" instance=ExtResource( 1 )]
+margin_top = 50.0
+margin_bottom = 90.0
