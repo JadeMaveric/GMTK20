@@ -40,9 +40,11 @@ func _ready():
 	
 func _input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("gp_kill"):
+		get_parent().get_parent().energy += 1
 		kill()
 		
 	elif event.is_action_pressed("gp_save"):
+		get_parent().get_parent().energy -= 1
 		save()
 
 
