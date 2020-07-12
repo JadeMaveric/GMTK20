@@ -87,3 +87,7 @@ func _on_BA_mouse_entered():
 
 func _on_BA_mouse_exited():
 	$Messages/BA.hide()
+
+
+func _on_Timer_timeout():
+	$Intro.hide()
