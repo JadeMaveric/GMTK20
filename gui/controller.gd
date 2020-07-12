@@ -32,6 +32,9 @@ func _process(_delta):
 	
 	if animated_health < 1:
 		$GameOver.show()
+		$AnimationPlayer.get_animation("GameOverBob").set_loop(true)
+		$AnimationPlayer.play("GameOverBob")
+		get_tree().paused = true
 
 
 func _on_HP_mouse_entered():
