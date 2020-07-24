@@ -2,7 +2,7 @@ extends Node
 
 
 export(float) var health = 100
-export(float) var energy = 10
+export(float) var energy = 1
 
 var game_score = 0
 
@@ -12,7 +12,7 @@ func use_energy(value):
 		energy -= value
 
 func refill_energy(value):
-	if energy < 10:
+	if energy < 1:
 		$GUI.tween.interpolate_property($GUI, "animated_energy", energy, energy+value, 0.5)
 		energy += value
 

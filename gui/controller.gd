@@ -12,7 +12,7 @@ onready var tween :Tween= $Tween
 var goodies_ratio := 0.5
 var baddies_ratio := 0.5
 var animated_health := 100.0
-var animated_energy := 10.0
+var animated_energy := 1.0
 
 var boredom_warning := false
 var addiction_warning := false

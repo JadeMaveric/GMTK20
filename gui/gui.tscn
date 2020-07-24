@@ -13,28 +13,159 @@
 [ext_resource path="res://gui/sprites/addiction_bar_bg.png" type="Texture" id=11]
 [ext_resource path="res://gui/Frijole-Regular.ttf" type="DynamicFontData" id=12]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 13
 outline_size = 1
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 14
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=3]
 size = 14
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 12 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.6, 0.6, 0.6, 0.309804 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "AddictionDanger"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "BoredomDanger"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "EnergyDanger"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="Animation" id=10]
 
 [sub_resource type="Animation" id=11]
 resource_name = "AddictionDanger"
@@ -55,7 +186,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/2/type = "bezier"
@@ -65,54 +196,11 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "BoredomDanger"
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -123,95 +211,6 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=12]
-resource_name = "EnergyDanger"
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "GameOverBob"
-
-[sub_resource type="Animation" id=13]
-resource_name = "AddictionDanger"
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.5, 1 )
-}
-
-[sub_resource type="Animation" id=14]
 resource_name = "BoredomDanger"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:r")
@@ -254,7 +253,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 resource_name = "EnergyDanger"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:r")
@@ -297,7 +296,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=14]
 resource_name = "GameOverBob"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("GameOver:custom_fonts/font:size")
@@ -310,7 +309,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 resource_name = "AddictionDanger"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Bar/MoodStats/AddictionBar/Count/Background/Title:custom_colors/font_color:r")
@@ -353,7 +352,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=16]
 resource_name = "BoredomDanger"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Bar/MoodStats/BoredomBar/Count/Background/Title:custom_colors/font_color:r")
@@ -396,7 +395,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=17]
 resource_name = "EnergyDanger"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Bar/LifeStats/EnergyBar/Count/Background/Title:custom_colors/font_color:r")
@@ -439,7 +438,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=18]
 resource_name = "GameOverBob"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("GameOver:custom_fonts/font:size")
@@ -514,7 +513,7 @@ margin_right = 64.4757
 margin_bottom = 23.0951
 mouse_filter = 0
 mouse_default_cursor_shape = 16
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "WP"
 align = 1
@@ -528,9 +527,9 @@ margin_left = 104.0
 margin_right = 352.0
 margin_bottom = 40.0
 mouse_filter = 2
-max_value = 10.0
+max_value = 1.0
 step = 0.1
-value = 10.0
+value = 1.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )
 
@@ -561,7 +560,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Score"
 align = 1
@@ -581,7 +580,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "000"
 align = 1
@@ -666,7 +665,7 @@ margin_right = 73.6483
 margin_bottom = 20.0
 mouse_filter = 0
 mouse_default_cursor_shape = 16
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Boredom"
 align = 1
@@ -717,7 +716,7 @@ margin_right = 76.5402
 margin_bottom = 20.0
 mouse_filter = 0
 mouse_default_cursor_shape = 16
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Addiction"
 align = 1
@@ -748,7 +747,7 @@ visible = false
 margin_top = 332.0
 margin_right = 1280.0
 margin_bottom = 388.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 text = "GAME OVER"
 align = 1
 
@@ -756,7 +755,7 @@ align = 1
 margin_top = 273.0
 margin_right = 1280.0
 margin_bottom = 447.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 text = "Move your mouse over a thought and click
 LMB - Nurture thought
 RMB - Destroy thought"
@@ -775,8 +774,8 @@ margin_left = 7.90996
 margin_top = 107.357
 margin_right = 195.923
 margin_bottom = 258.357
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "MH is a measure of your teen's mental health points. Should this goes all the way to zero, we'll have to relieve you of your duties."
 autowrap = true
 __meta__ = {
@@ -789,8 +788,8 @@ margin_left = 24.0
 margin_top = 104.0
 margin_right = 340.0
 margin_bottom = 255.0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Acting on thoughts requires will power. And we've only got a finite amount. Use it wisely. You can still manipulate thoughts if you're out will power. But a tired mind does not make good decisions, it might backfire. "
 autowrap = true
 __meta__ = {
@@ -803,8 +802,8 @@ margin_left = 952.418
 margin_top = 94.6692
 margin_right = 1268.42
 margin_bottom = 245.669
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Keep track of your teen's mental balance! Nurturing fun thoughts, will decrease boredom. But increases the likelyhood of addiction. Whereas choosing to focus on studious thoughts will do the opposite"
 autowrap = true
 __meta__ = {
@@ -813,24 +812,24 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 pause_mode = 2
-anims/AddictionDanger = SubResource( 11 )
-anims/BoredomDanger = SubResource( 10 )
-anims/EnergyDanger = SubResource( 12 )
-anims/GameOverBob = SubResource( 9 )
+anims/AddictionDanger = SubResource( 7 )
+anims/BoredomDanger = SubResource( 8 )
+anims/EnergyDanger = SubResource( 9 )
+anims/GameOverBob = SubResource( 10 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 pause_mode = 2
-anims/AddictionDanger = SubResource( 13 )
-anims/BoredomDanger = SubResource( 14 )
-anims/EnergyDanger = SubResource( 15 )
-anims/GameOverBob = SubResource( 16 )
+anims/AddictionDanger = SubResource( 11 )
+anims/BoredomDanger = SubResource( 12 )
+anims/EnergyDanger = SubResource( 13 )
+anims/GameOverBob = SubResource( 14 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 pause_mode = 2
-anims/AddictionDanger = SubResource( 17 )
-anims/BoredomDanger = SubResource( 18 )
-anims/EnergyDanger = SubResource( 19 )
-anims/GameOverBob = SubResource( 20 )
+anims/AddictionDanger = SubResource( 15 )
+anims/BoredomDanger = SubResource( 16 )
+anims/EnergyDanger = SubResource( 17 )
+anims/GameOverBob = SubResource( 18 )
 [connection signal="mouse_entered" from="Bar/LifeStats/LifeBar/Count/Background/Title" to="." method="_on_HP_mouse_entered"]
 [connection signal="mouse_exited" from="Bar/LifeStats/LifeBar/Count/Background/Title" to="." method="_on_HP_mouse_exited"]
 [connection signal="mouse_entered" from="Bar/LifeStats/EnergyBar/Count/Background/Title" to="." method="_on_WP_mouse_entered"]
